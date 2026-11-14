@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Orange-500: hsl(25, 97%, 53%);
+
+  --White: hsl(0, 100%, 100%);
+  --Grey-500: hsl(217, 12%, 63%);
+  --Grey-700: hsl(219, 19%, 23%);
+  --Grey-900: hsl(213, 19%, 18%);
+  --Grey-950: hsl(216, 12%, 8%);
+}
+
+@font-face {
+  font-family: "Overpass";
+  src: url("assets/fonts/Overpass-VariableFont_wght.ttf");
+}
+
+html {
+  font-size: 62.25%;
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  background-color: var(--Grey-950);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  color: var(--White);
+  max-width: 40rem;
+  min-width: 30rem;
+  background-color: var(--Grey-900);
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  border-radius: 10px;
+  gap: 2rem;
+}
+.star-box {
+  padding: 1rem 1.2rem;
+  background-color: var(--Grey-700);
+  width: fit-content;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+}
+.star-box img {
+  margin-top: 0.2rem;
+  width: 1.4rem;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.description {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--Grey-500);
+}
+.rateNumbers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rateNumber {
+  padding: 1.5rem 2rem;
+  background-color: var(--Grey-700);
+  font-size: 1.4rem;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.btn-submit:hover,
+.rateNumber:hover {
+  background-color: var(--White);
+  color: var(--Grey-900);
+}
+.btn-submit:active,
+.rateNumber:hover:active {
+  background-color: var(--Orange-500);
+  color: var(--Grey-900);
+}
+
+.btn-submit {
+  height: 4rem;
+  border-radius: 20px;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.result-card header img {
+  width: 12rem;
+}
+.result-card header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.result-card header div {
+  padding: 0.5rem 2rem;
+  background-color: var(--Grey-700);
+  border-radius: 10px;
+}
+.star-chossen {
+  color: var(--Orange-500);
+  font-size: 1.2rem;
+}
+.result-title {
+  text-align: center;
+}
+
+.result-description {
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+}

@@ -1,7 +1,7 @@
-import Rating from "./Rating";
+import RatingCard from "./RatingCard";
 
 function App() {
-  return <Rating />;
+  return <RatingCard />;
 }
 
 export default App;
