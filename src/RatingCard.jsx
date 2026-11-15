@@ -1,9 +1,34 @@
+import { useState } from "react";
 import star from "./assets/images/icon-star.svg";
 import thankYou from "./assets/images/illustration-thank-you.svg";
 
 function RatingCard() {
+  const [number, setNumber] = useState(0);
+
+  function handleNumberChange(e) {
+    // Update The State
+    setNumber(e.target.textContent);
+
+    // Remove selected class from all childs
+    const parent = e.target.parentElement;
+    parent.querySelectorAll(".rateNumber").forEach((element) => {
+      element.classList.remove("selected");
+    });
+
+    // add selected class to the slected item
+    e.target.classList.add("selected");
+  }
+
+  // Click the Submit Button
+  function handleSubmit() {
+    document.querySelector(".rating-card").classList.add("hidden");
+    document.querySelector(".result-card").classList.remove("hidden");
+  }
+
+  console.log(number);
   return (
     <>
+      {/* Rating Card */}
       <article className="rating-card card">
         <header>
           <div className="star-box">
@@ -17,20 +42,27 @@ function RatingCard() {
             feedback is appreciated to help us improve our offering!
           </p>
         </div>
-        <div className="rateNumbers">
-          <div className="rateNumber">1</div>
-          <div className="rateNumber">2</div>
-          <div className="rateNumber">3</div>
-          <div className="rateNumber">4</div>
-          <div className="rateNumber">5</div>
-        </div>
-        <button className="btn-submit">Submit</button>
+        <ul className="rateNumbers">
+          {[1, 2, 3, 4, 5].map((number, index) => (
+            <li
+              className="rateNumber"
+              key={index}
+              onClick={(e) => handleNumberChange(e)}
+            >
+              {number}
+            </li>
+          ))}
+        </ul>
+        <button className="btn-submit" onClick={handleSubmit}>
+          Submit
+        </button>
       </article>
+      {/* Result Card */}
       <article className="result-card card hidden">
         <header>
           <img src={thankYou} alt="" />
           <div>
-            <p className="star-chossen">You select 4 out 0f 5</p>
+            <p className="star-chossen">You select {number} out 0f 5</p>
           </div>
         </header>
         <div>

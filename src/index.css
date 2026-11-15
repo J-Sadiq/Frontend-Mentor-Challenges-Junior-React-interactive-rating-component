@@ -19,6 +19,8 @@
   src: url("assets/fonts/Overpass-VariableFont_wght.ttf");
 }
 
+/* Same Styles */
+
 html {
   font-size: 62.25%;
 }
@@ -43,6 +45,9 @@ body {
   border-radius: 10px;
   gap: 2rem;
 }
+
+/* Rating Card */
+
 .star-box {
   padding: 1rem 1.2rem;
   background-color: var(--Grey-700);
@@ -68,6 +73,7 @@ body {
 .rateNumbers {
   display: flex;
   justify-content: space-between;
+  list-style-type: none;
 }
 
 .rateNumber {
@@ -91,16 +97,7 @@ body {
   color: var(--Grey-900);
 }
 
-.btn-submit {
-  height: 4rem;
-  border-radius: 20px;
-  border: none;
-  font-weight: 700;
-  letter-spacing: 1.3px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all ease 0.3s;
-}
+/* Result Card */
 
 .result-card {
   display: flex;
@@ -133,8 +130,26 @@ body {
 .result-description {
   text-align: center;
 }
+
+/* Submit */
+
+.btn-submit {
+  height: 4rem;
+  border-radius: 20px;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+/* Hidden class that shows after click */
 .hidden {
   display: none;
+}
+.selected {
+  background-color: var(--Orange-500);
 }
 
 @media (max-width: 500px) {
